@@ -260,6 +260,17 @@
             100% { transform: translateY(-200px) rotate(20deg); opacity: 0; } 
         }
 
+        /* CSS CHO DRONE ICONS (Giữ lại CSS cho icon bay lơ lửng nếu cần dùng lại cho hiệu ứng khác) */
+        .floating-icon { 
+            position: absolute; font-size: 2rem; pointer-events: none; z-index: 55;
+            animation: floatAround 3s ease-out forwards;
+        }
+        @keyframes floatAround {
+            0% { transform: translate(0, 0) scale(0.5); opacity: 0; } 
+            20% { opacity: 1; transform: translate(var(--tx), var(--ty)) scale(1.2); } 
+            100% { transform: translate(var(--tx-end), var(--ty-end)) scale(0); opacity: 0; } 
+        }
+
         @media (max-width: 480px) {
             #letter-modal { width: 90%; font-size: 1.3rem; padding: 15px; }
             .start-btn { font-size: 1.2rem; padding: 15px 30px; }
@@ -321,10 +332,12 @@
 
         // LỜI CHÚC MỚI (CHUNG HƠN, XƯNG CẬU - TỚ)
         const LETTERS = [
-            "🧧 Năm mới 2026, chúc bé một năm rực rỡ! Luôn tràn đầy năng lượng, sức khỏe dồi dào và gặp thật nhiều may mắn trong cuộc sống. Cứ vui vẻ và cười thật nhiều nhé!",
-            "🎆 Chúc bé một năm học tập/làm việc thật thành công. Mọi dự định ấp ủ đều sẽ thành hiện thực. Hãy tin vào bản thân mình, bé giỏi hơn nhiều đấy!",
-            "🥰 Chúc bé năm mới ngày càng xinh đẹp/rạng rỡ, luôn là chính mình và tỏa sáng theo cách riêng. Happy New Year!",
-            "💌 Lì xì này chứa đựng niềm tin và sự ủng hộ tớ dành cho bé. Chúc năm 2026 của bé sẽ trọn vẹn và ý nghĩa. Happy New Year! ❤️"
+            "🧧 Năm mới 2026, chúc cậu một năm rực rỡ! Luôn tràn đầy năng lượng, sức khỏe dồi dào và gặp thật nhiều may mắn trong cuộc sống. Cứ vui vẻ và cười thật nhiều nhé!",
+            "🎆 Chúc cậu một năm học tập/làm việc thật thành công. Mọi dự định ấp ủ đều sẽ thành hiện thực. Hãy tin vào bản thân mình, cậu giỏi hơn cậu nghĩ nhiều đấy!",
+            "🚀 Cuộc sống sẽ có lúc thăng lúc trầm, nhưng tớ mong cậu luôn giữ vững tinh thần lạc quan. Mọi khó khăn chỉ là thử thách để chúng ta trưởng thành hơn thôi. Cố lên nhé!",
+            "🥰 Chúc cậu năm mới ngày càng xinh đẹp/rạng rỡ, luôn là chính mình và tỏa sáng theo cách riêng. Happy New Year!",
+            "🥳 Gác lại những muộn phiền của năm cũ, cùng đón chào một năm mới với thật nhiều hy vọng mới. Chúc cậu tìm thấy niềm vui trong từng ngày trôi qua.",
+            "💌 Lì xì này chứa đựng niềm tin và sự ủng hộ tớ dành cho cậu. Chúc năm 2026 của cậu sẽ trọn vẹn và ý nghĩa. Happy New Year! ❤️"
         ];
 
         // --- HỆ THỐNG ÂM THANH CƠ BẢN ---
